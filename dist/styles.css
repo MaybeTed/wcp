@@ -40,7 +40,7 @@ header img {
 	margin: 20px 0 20px 35px;
 }
 
-.make-picks, .success-container {
+.make-picks, .success-container, .picks {
 	width: 85%;
 	background: #DCE6FC;
 	position: absolute;
@@ -106,5 +106,27 @@ aside h4 {
 .participants-container p {
 	text-align: center;
 	margin: 10px 0;
+}
+
+/*****************
+	  PICKS     */
+
+.picks h3 {
+	text-align: center;
+}
+
+.flex-picks {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+.picks table {
+	margin: auto;
+}
+
+td, th {
+	font-size: 20px;
+	padding: 20px;
 }
 
