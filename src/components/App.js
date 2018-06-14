@@ -6,7 +6,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			participants: []
+			participants: [],
+			madePicks: false
 		}
 		this.submitPicks = this.submitPicks.bind(this);
 	}
@@ -17,10 +18,14 @@ class App extends React.Component {
 
 	submitPicks(picks) {
 		axios.post('/api/submitPicks', picks)
-			.then((response) => this.updateParticipants())
+			.then((response) => {
+				this.setState({ madePicks: true });
+				this.updateParticipants();
+			})
 	}
 
 	updateParticipants() {
+		window.scrollTo(0,0);
 		axios.get('/api/participants')
 			.then((response) => {
 				this.setState({ participants: response.data });
@@ -36,7 +41,11 @@ class App extends React.Component {
 					<img src="/suarez.png" />
 					<img src="/neymar.png" />
 				</header>
-				<MakePicksForm submitPicks={this.submitPicks} />
+				{!this.state.madePicks ? 
+					<MakePicksForm submitPicks={this.submitPicks} />
+					:
+					<h1 className="success-msg">You have successfully submitted your picks.</h1>
+				}
 				<aside>
 					<h4>Participants</h4>
 					<div className="participants-container">
