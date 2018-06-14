@@ -45,7 +45,7 @@ header img {
 	background: #DCE6FC;
 	position: absolute;
 	top: 300px;
-	height: 1300px;
+	height: 1500px;
 }
 
 .success-msg {
@@ -89,7 +89,7 @@ aside {
 	position: absolute;
 	left: 85%;
 	top: 300px;
-	height: 1300px;
+	height: 1500px;
 	color: #4b4c4c;
 	border-left: 1px solid black;
 }
