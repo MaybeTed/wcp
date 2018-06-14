@@ -18,5 +18,13 @@ module.exports = function(router) {
 		})
 	});
 
+	router.get('/picks', (req, res) => {
+		const { name } = req.query;
+		Picks.find({ name }).exec(function(err, results) {
+			if (err) throw err;
+			res.json({ userPicks: results });
+		});
+	});
+
 	return router;
 }
