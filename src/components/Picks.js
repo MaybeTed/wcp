@@ -11,14 +11,17 @@ class Picks extends React.Component {
 	}
 
 	componentDidMount() {
+		console.log('componentDidMount');
 		this.getPicks();
 	}
 
 	componentDidUpdate() {
+		console.log('componentDidUpdate')
 		this.getPicks();
 	}
 
 	getPicks() {
+		console.log('f invoked')
 		const username = this.props.match.params.username;
 		axios.get(`/api/picks?name=${username}`)
 			.then((response) => {
