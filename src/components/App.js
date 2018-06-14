@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { Route, Switch, Link } from 'react-router-dom';
 import MakePicksForm from './MakePicksForm';
+import Picks from './Picks';
 
 class App extends React.Component {
 	constructor() {
@@ -41,18 +43,22 @@ class App extends React.Component {
 					<img src="/suarez.png" />
 					<img src="/neymar.png" />
 				</header>
-				{!this.state.madePicks ? 
-					<MakePicksForm submitPicks={this.submitPicks} />
-					:
-					<div className="success-container">
-						<h1 className="success-msg">You have successfully submitted your picks.</h1>
-					</div>
-				}
+				<Switch>
+					<Route exact path="/" render={() => {
+						return !this.state.madePicks ?
+							<MakePicksForm submitPicks={this.submitPicks} />
+							:
+							<div className="success-container">
+								<h1 className="success-msg">You have successfully submitted your picks.</h1>
+							</div>
+					}} />
+					<Route path="/picks/:username" render={(props) => (<Picks {...props} />)} />
+				</Switch>
 				<aside>
 					<h4>Participants</h4>
 					<div className="participants-container">
 						{this.state.participants.map((user) => {
-							return <p key={user._id}>{user.name}</p>
+							return <p key={user._id}><Link to={`/picks/${user.name}`}>{user.name}</Link></p>
 						})}
 					</div>
 				</aside>
