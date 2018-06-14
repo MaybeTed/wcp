@@ -35,7 +35,7 @@ class MakePicksForm extends React.Component {
 			var winner = group + groups[i] + 'winner';
 			var second = group + groups[i] + 'second';
 			if (this.state[winner] === this.state[second]) {
-				alert('Group ' + groups[i] + ' is not allowed to have the same country as the winner and the runner up.');
+				alert('The winner of group ' + groups[i] + ' and the runner up of group ' + groups[i] + ' must be different.');
 				return;
 			}
 		}
