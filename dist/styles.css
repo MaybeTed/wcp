@@ -1,0 +1,103 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.3em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: white;
+}
+
+a {
+	text-decoration: none;
+	color: #2200CC;
+}
+
+a:visited {
+	color: #2200CC;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+header {
+	background: #4286f4;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+header img {
+	width: 240px;
+	height: 260px;
+	margin: 20px 0 20px 35px;
+}
+
+.make-picks {
+	width: 85%;
+	background: #DCE6FC;
+	position: absolute;
+	height: 100%;
+}
+
+.make-picks h2 {
+	text-align: center;
+}
+
+.make-picks label {
+	margin-right: 10px;
+}
+
+.make-picks select {
+	width: 125px;
+	font-size: 18px;
+}
+
+.make-picks button {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.1em;
+}
+
+.form-items {
+	margin-left: 75px;
+}
+
+.group-picks {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+aside {
+	background: #fff;
+	width: 15%;
+	position: absolute;
+	left: 85%;
+	height: 100%;
+	color: #4b4c4c;
+	border-left: 1px solid black;
+}
+
+aside h4 {
+	text-align: center;
+}
+
+.participants-container {
+	width: 90%;
+	margin: auto;
+}
+
+.participants-container p {
+	text-align: center;
+	margin: 10px 0;
+}
+
