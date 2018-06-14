@@ -6,27 +6,28 @@ class Picks extends React.Component {
 		super();
 		this.state = {
 			picks: [],
-			groups: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+			groups: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+			prevLocation: '/'
 		}
 	}
 
 	componentDidMount() {
-		console.log('componentDidMount');
-		this.getPicks();
+			this.getPicks();
 	}
 
 	componentDidUpdate() {
-		console.log('componentDidUpdate')
+		if (this.state.prevLocation === this.props.match.params.username) {
+			return;
+		}
 		this.getPicks();
 	}
 
 	getPicks() {
-		console.log('f invoked')
 		const username = this.props.match.params.username;
 		axios.get(`/api/picks?name=${username}`)
 			.then((response) => {
 				if (response.data.userPicks.length) {
-					this.setState({ picks: response.data.userPicks });
+					this.setState({ picks: response.data.userPicks, prevLocation: this.props.match.params.username });
 				}
 			});
 	}
