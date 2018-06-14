@@ -40,17 +40,17 @@ header img {
 	margin: 20px 0 20px 35px;
 }
 
-.make-picks, .success-msg {
+.make-picks, .success-container {
 	width: 85%;
 	background: #DCE6FC;
 	position: absolute;
-	height: 100%;
+	top: 300px;
+	height: 1300px;
 }
 
 .success-msg {
-	margin: 0;
+	margin-top: 200px;
 	text-align: center;
-	padding-top: 200px;
 }
 
 .make-picks h2 {
@@ -88,7 +88,8 @@ aside {
 	width: 15%;
 	position: absolute;
 	left: 85%;
-	height: 100%;
+	top: 300px;
+	height: 1300px;
 	color: #4b4c4c;
 	border-left: 1px solid black;
 }

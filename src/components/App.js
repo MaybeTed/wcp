@@ -44,7 +44,9 @@ class App extends React.Component {
 				{!this.state.madePicks ? 
 					<MakePicksForm submitPicks={this.submitPicks} />
 					:
-					<h1 className="success-msg">You have successfully submitted your picks.</h1>
+					<div className="success-container">
+						<h1 className="success-msg">You have successfully submitted your picks.</h1>
+					</div>
 				}
 				<aside>
 					<h4>Participants</h4>
