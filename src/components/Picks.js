@@ -7,6 +7,7 @@ class Picks extends React.Component {
 		this.state = {
 			picks: [],
 			groups: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+			groupWinners: {},
 			prevLocation: '/'
 		}
 	}
@@ -22,12 +23,37 @@ class Picks extends React.Component {
 		this.getPicks();
 	}
 
+	calculatePoints() {
+		let points = 0;
+		let winnerKey = '';
+		let secondKey = '';
+		let { groupWinners, groups, picks } = this.state;
+		if (!Object.keys(groupWinners).length) {
+			return 0;
+		}
+		for (var i = 0; i < groups.length; i++) {
+			winnerKey = 'group' + groups[i] + 'winner';
+			secondKey = 'group' + groups[i] + 'second';
+			if (groupWinners[groups[i]].winner === picks[0][winnerKey]) {
+				points += 10;
+			}
+			if (groupWinners[groups[i]].second === picks[0][secondKey]) {
+				points += 10;
+			}
+		}
+		return points;
+	}
+
 	getPicks() {
 		const username = this.props.match.params.username;
 		axios.get(`/api/picks?name=${username}`)
 			.then((response) => {
 				if (response.data.userPicks.length) {
-					this.setState({ picks: response.data.userPicks, prevLocation: this.props.match.params.username });
+					this.setState({
+						picks: response.data.userPicks,
+						groupWinners: response.data.groupWinners,
+						prevLocation: this.props.match.params.username
+					});
 				}
 			});
 	}
@@ -50,6 +76,7 @@ class Picks extends React.Component {
 			return (
 				<div className="picks">
 				    <h3>{picks.name}'s Picks</h3>
+				    <h5>{this.calculatePoints()} Points</h5>
 				    <div className="flex-picks">
 				    	<p>Champion: {picks.champion}</p>
 				    	<p>Most Goals: {picks.mostgoals}</p>
