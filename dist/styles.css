@@ -139,6 +139,26 @@ td, th {
 /*******************
 	  BRACKET     */
 
+.bracket-page {
+	padding-left: 50px;
+	padding-top: 25px;
+}
+
+.bracket-page select {
+	margin-top: 25px;
+	margin-bottom: 15px;
+	margin-left: 5px;
+}
+
+.bracket-page button {
+	font-size: 1.1em;
+	margin-top: 15px;
+}
+
+.bracket-page h3 {
+	text-align: center;
+}
+
 .bracket {
 	background: white;
 	border: 1px solid black;
@@ -150,6 +170,7 @@ td, th {
 .team1 {
 	margin-top: 20px;
 	padding-left: 10px;
+	cursor: pointer;
 }
 
 .team2 {
@@ -160,6 +181,7 @@ td, th {
 	height: 40px;
 	display: flex;
 	padding-left: 10px;
+	cursor: pointer;
 }
 
 .team2 span {
@@ -222,8 +244,6 @@ td, th {
 .round-four .team2 {
 	height: 345px;
 }
-
-
 
 .champ {
 	top: 317px;
