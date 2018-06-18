@@ -40,7 +40,7 @@ header img {
 	margin: 20px 0 20px 35px;
 }
 
-.make-picks, .success-container, .picks {
+.make-picks, .success-container, .picks, .bracket-page {
 	width: 85%;
 	background: #DCE6FC;
 	position: absolute;
@@ -135,4 +135,105 @@ td, th {
 	font-size: 20px;
 	padding: 20px;
 }
+
+/*******************
+	  BRACKET     */
+
+.bracket {
+	background: white;
+	border: 1px solid black;
+	width: 700px;
+	height: 720px;
+	position: relative;
+}
+
+.team1 {
+	margin-top: 20px;
+	padding-left: 10px;
+}
+
+.team2 {
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 120px;
+	height: 40px;
+	display: flex;
+	padding-left: 10px;
+}
+
+.team2 span {
+	align-self: flex-end;
+}
+
+.round-one, .round-two, .round-three, .round-four, .champ {
+	position: absolute;
+	width: 130px;
+}
+
+.round-one {
+	top: 0;
+	left: 0;
+}
+
+.round-two {
+	top: 0;
+	left: 130px;
+}
+
+.round-two .team1 {
+	margin-top: 60px;
+}
+
+.round-two .team2 {
+	height: 87px;
+}
+
+.round-two .top-team {
+	margin-top: 41px;
+}
+
+.round-three {
+	top: 0;
+	left: 260px;
+}
+
+.round-three .team1 {
+	margin-top: 147px;
+}
+
+.round-three .team2 {
+	height: 174px;
+}
+
+.round-three .top-team {
+	margin-top: 85px;
+}
+
+.round-four {
+	top: 0;
+	left: 390px;
+}
+
+.round-four .team1 {
+	margin-top: 172px;
+}
+
+.round-four .team2 {
+	height: 345px;
+}
+
+
+
+.champ {
+	top: 317px;
+	left: 520px;
+	border-bottom: 1px solid black;
+}
+
+
+
+
+
+
 
