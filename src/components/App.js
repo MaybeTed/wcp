@@ -3,19 +3,29 @@ import axios from 'axios';
 import { Route, Switch, Link } from 'react-router-dom';
 import MakePicksForm from './MakePicksForm';
 import Picks from './Picks';
+import Bracket from './Bracket';
 
 class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			participants: [],
-			madePicks: false
+			madePicks: false,
+			groupWinners: {}
 		}
+		this.submitBracket = this.submitBracket.bind(this);
 		this.submitPicks = this.submitPicks.bind(this);
 	}
 
 	componentDidMount() {
 		this.updateParticipants();
+	}
+
+	submitBracket(picks) {
+		axios.post('/api/submitBracket', picks)
+			.then((response) => {
+				this.setState({ madePicks: true });
+			})
 	}
 
 	submitPicks(picks) {
@@ -30,7 +40,11 @@ class App extends React.Component {
 		window.scrollTo(0,0);
 		axios.get('/api/participants')
 			.then((response) => {
-				this.setState({ participants: response.data });
+				console.log('response: ', response)
+				this.setState({
+					participants: response.data.results,
+					groupWinners: response.data.groupWinners
+				});
 			})
 	}
 
@@ -46,7 +60,7 @@ class App extends React.Component {
 				<Switch>
 					<Route exact path="/" render={() => {
 						return !this.state.madePicks ?
-							<MakePicksForm submitPicks={this.submitPicks} />
+							<Bracket participants={this.state.participants} groupWinners={this.state.groupWinners} submitBracket={this.submitBracket} />
 							:
 							<div className="success-container">
 								<h1 className="success-msg">You have successfully submitted your picks.</h1>
