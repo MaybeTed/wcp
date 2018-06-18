@@ -59,13 +59,29 @@ class Picks extends React.Component {
 	}
 
 	printPicks(group, i) {
-		let winnerKey = 'group' + group + 'winner';
-		let secondKey = 'group' + group + 'second';
+		const winnerKey = 'group' + group + 'winner';
+		const secondKey = 'group' + group + 'second';
+		const groupWinners = this.state.groupWinners;
+		var winnerClassname, secondClassname;
+		if (groupWinners[group].winner === '---') {
+			winnerClassname = '';
+		} else if (this.state.picks[0][winnerKey] === groupWinners[group].winner) {
+			winnerClassname = 'correct';
+		} else {
+			winnerClassname = 'incorrect';
+		}
+		if (groupWinners[group].second === '---') {
+			secondClassname = '';
+		} else if (this.state.picks[0][secondKey] === groupWinners[group].second) {
+			secondClassname = 'correct';
+		} else {
+			secondClassname = 'incorrect';
+		}
 		return (
 			<tr key={i}>
 				<td>Group {group}</td>
-				<td>{this.state.picks[0][winnerKey]}</td>
-				<td>{this.state.picks[0][secondKey]}</td>
+				<td className={winnerClassname}>{this.state.picks[0][winnerKey]}</td>
+				<td className={secondClassname}>{this.state.picks[0][secondKey]}</td>
 			</tr>
 		)
 	}
