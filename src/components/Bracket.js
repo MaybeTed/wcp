@@ -155,7 +155,6 @@ class Bracket extends React.Component {
 
 	render() {
 		if (!this.props.participants.length) {
-			console.log('no props')
 			return null;
 		}
 
