@@ -3,16 +3,32 @@ const Bracket = require('./db/bracket');
 
 // FILL IN CORRECT WINNERS AFTER GAMES ARE PLAYED
 const groupWinners = {
-	'A': { 'winner': 'Egypt', 'second': 'Russia' },
-	'B': { 'winner': 'Spain', 'second': 'Morocco' },
-	'C': { 'winner': 'Denmark', 'second': 'Australia' },
+	'A': { 'winner': 'Russia', 'second': 'Uruguay' },
+	'B': { 'winner': 'Iran', 'second': 'Portugal' },
+	'C': { 'winner': 'France', 'second': 'Denmark' },
 	'D': { 'winner': 'Croatia', 'second': 'Iceland' },
-	'E': { 'winner': 'Brazil', 'second': 'Costa Rica' },
-	'F': { 'winner': 'Germany', 'second': 'Mexico' },
+	'E': { 'winner': 'Serbia', 'second': 'Brazil' },
+	'F': { 'winner': 'Sweden', 'second': 'Mexico' },
 	'G': { 'winner': 'Belgium', 'second': 'England' },
-	'H': { 'winner': 'Japan', 'second': 'Colombia' }
+	'H': { 'winner': 'Poland', 'second': 'Senegal' }
 };
-//const groupWinners = {};
+const bracketWinners = {
+	round2A: 'Russia',
+	round2B: 'France',
+	round2C: 'Mexico',
+	round2D: 'Belgium',
+	round2E: 'Uruguay',
+	round2F: 'Denmark',
+	round2G: 'Brazil',
+	round2H: 'England',
+	round3A: '',
+	round3B: '',
+	round3C: '',
+	round3D: '',
+	round4A: '',
+	round4B: '',
+	champ: '',
+}
 
 module.exports = function(router) {
 	router.post('/submitPicks', (req, res) => {
@@ -34,9 +50,12 @@ module.exports = function(router) {
 
 	router.get('/picks', (req, res) => {
 		const { name } = req.query;
-		Picks.find({ name }).exec(function(err, results) {
+		Picks.find({ name }).exec(function(err, userPicks) {
 			if (err) throw err;
-			res.json({ userPicks: results, groupWinners });
+			Bracket.find({ name }).exec(function(err, bracketPicks) {
+				if (err) throw err;
+				res.json({ userPicks, groupWinners, bracketPicks, bracketWinners });
+			})
 		});
 	});
 
