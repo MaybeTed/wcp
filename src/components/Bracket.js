@@ -163,6 +163,7 @@ class Bracket extends React.Component {
 
 		return (
 			<div className="bracket-page">
+				<h3>Make your picks and then click the save button</h3>
 				<div>
 					<label>Select your name:</label>
 					<select onChange={this.selectName}>

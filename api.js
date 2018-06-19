@@ -21,13 +21,13 @@ const bracketWinners = {
 	round2F: 'Denmark',
 	round2G: 'Brazil',
 	round2H: 'England',
-	round3A: '',
-	round3B: '',
-	round3C: '',
-	round3D: '',
-	round4A: '',
-	round4B: '',
-	champ: '',
+	round3A: 'Russia',
+	round3B: 'Belgium',
+	round3C: 'Uruguay',
+	round3D: 'Brazil',
+	round4A: 'Russia',
+	round4B: 'Brazil',
+	champ: 'Brazil',
 }
 
 module.exports = function(router) {

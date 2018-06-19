@@ -40,7 +40,6 @@ class App extends React.Component {
 		window.scrollTo(0,0);
 		axios.get('/api/participants')
 			.then((response) => {
-				console.log('response: ', response)
 				this.setState({
 					participants: response.data.results,
 					groupWinners: response.data.groupWinners
@@ -66,11 +65,11 @@ class App extends React.Component {
 								<h1 className="success-msg">You have successfully submitted your picks.</h1>
 							</div>
 					}} />
-					<Route path="/picks/:username" render={(props) => (<Picks {...props} />)} />
+					<Route path="/picks/:username" render={(props) => (<Picks {...props} groupWinners={this.state.groupWinners}/>)} />
 				</Switch>
 				<aside>
-					<h4>Participants</h4>
 					<div className="participants-container">
+						<h4>Participants</h4>
 						{this.state.participants.map((user) => {
 							return <p key={user._id}><Link to={`/picks/${user.name}`}>{user.name}</Link></p>
 						})}
