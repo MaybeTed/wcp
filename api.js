@@ -56,6 +56,7 @@ const bracketWinners = {
 	round4B: '',
 	champ: '',
 }
+const goalsWinner = '';
 
 module.exports = function(router) {
 	router.post('/submitPicks', (req, res) => {
@@ -81,7 +82,7 @@ module.exports = function(router) {
 			if (err) throw err;
 			Bracket.find({ name }).exec(function(err, bracketPicks) {
 				if (err) throw err;
-				res.json({ userPicks, groupWinners, bracketPicks, bracketWinners });
+				res.json({ userPicks, groupWinners, bracketPicks, bracketWinners, goalsWinner });
 			})
 		});
 	});
