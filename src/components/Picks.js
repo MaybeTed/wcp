@@ -10,7 +10,8 @@ class Picks extends React.Component {
 			groupWinners: {},
 			prevLocation: '/',
 			bracketPicks: {},
-			bracketWinners: {}
+			bracketWinners: {},
+			goalsWinner: ''
 		}
 		this.checkIfCorrectBracketPick = this.checkIfCorrectBracketPick.bind(this);
 	}
@@ -50,6 +51,11 @@ class Picks extends React.Component {
 				points += 200;
 			}
 		}
+		if (this.state.goalsWinner && this.state.picks.length) {
+			if (this.state.goalsWinner === this.state.picks[0].mostgoals) {
+				points += 40;
+			}
+		}
 		return points;
 	}
 
@@ -83,7 +89,8 @@ class Picks extends React.Component {
 						groupWinners: response.data.groupWinners,
 						prevLocation: this.props.match.params.username,
 						bracketPicks: bracket,
-						bracketWinners: response.data.bracketWinners
+						bracketWinners: response.data.bracketWinners,
+						goalsWinner: response.data.goalsWinner
 					});
 				}
 			});
@@ -149,7 +156,7 @@ class Picks extends React.Component {
 				    <h5>{this.calculatePoints()} Points</h5>
 				    <div className="flex-picks">
 				    	<p>Champion: <span className={this.state.bracketWinners && this.state.bracketWinners.champ === '' ? '' : this.state.bracketWinners.champ === picks.champion ? 'correct' : 'incorrect'}>{picks.champion}</span></p>
-				    	<p>Most Goals: {picks.mostgoals}</p>
+				    	<p>Most Goals: <span className={this.state.goalsWinner === '' ? '' : this.state.goalsWinner === picks.mostgoals ? 'correct' : 'incorrect'}>{picks.mostgoals}</span></p>
 				    </div>
 				    <table>
 				    	<tbody>
