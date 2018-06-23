@@ -172,6 +172,9 @@ class Bracket extends React.Component {
 						})}
 					</select>
 				</div>
+				<div className="point-values">
+					<p><span className="points1">10pts</span><span className="points2"></span>20pts<span className="points2">40pts</span><span className="points2">80pts</span></p>
+				</div>
 				<div className="bracket">
 					<div className="round-one">
 						<div className="team1" onClick={this.selectTeam}>{teams['A'].winner}</div>

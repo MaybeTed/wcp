@@ -275,6 +275,18 @@ td, th {
 	border-bottom: 1px solid black;
 }
 
+.point-values p {
+	margin-bottom: 0;
+}
+
+.points1 {
+	margin-left: 160px;
+}
+
+.points2 {
+	margin-left: 80px;
+}
+
 
 
 
