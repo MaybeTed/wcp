@@ -40,7 +40,7 @@ header img {
 	margin: 20px 0 20px 35px;
 }
 
-.make-picks, .success-container, .picks, .bracket-page {
+.make-picks, .success-container, .picks, .bracket-page, .standings-page {
 	width: 85%;
 	background: #DCE6FC;
 	position: absolute;
@@ -117,6 +117,17 @@ aside h4 {
 
 /*****************
 	  PICKS     */
+
+#home-link {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+}
+
+#home-link a {
+	color: black;
+	cursor: pointer;
+}
 
 .picks h3 {
 	text-align: center;
@@ -287,7 +298,23 @@ td, th {
 	margin-left: 80px;
 }
 
+/*********************
+	  STANDINGS     */
 
+.standings {
+	margin: auto;
+	width: 150px;
+}
+
+.standings-container h2 {
+	text-align: center;
+}
+
+.row {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
 
 
 
