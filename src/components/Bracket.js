@@ -29,7 +29,7 @@ class Bracket extends React.Component {
 
 	savePicks(e) {
 		const picks = this.state;
-		if (picks[name] === '') {
+		if (picks['name'] === '') {
 			alert('You forgot to select your name');
 			return;
 		}
