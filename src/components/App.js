@@ -4,6 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import MakePicksForm from './MakePicksForm';
 import Picks from './Picks';
 import Bracket from './Bracket';
+import Standings from './Standings';
 
 class App extends React.Component {
 	constructor() {
@@ -78,6 +79,32 @@ class App extends React.Component {
 			</div>
 		)
 	}
+
+	// render() {
+	// 	return (
+	// 		<div>
+	// 			<header>
+	// 				<img src="/worldcup.png" />
+	// 				<img src="/messi.png" />
+	// 				<img src="/suarez.png" />
+	// 				<img src="/neymar.png" />
+	// 			</header>
+	// 			<Switch>
+	// 				<Route exact path="/" render={() => (<Standings />)} />
+	// 				<Route path="/picks/:username" render={(props) => (<Picks {...props} groupWinners={this.state.groupWinners}/>)} />
+	// 			</Switch>
+	// 			<aside>
+	// 				<div className="participants-container">
+	// 					<h4>Participants</h4>
+	// 					{this.state.participants.map((user) => {
+	// 						return <p key={user._id}><Link to={`/picks/${user.name}`}>{user.name}</Link></p>
+	// 					})}
+	// 				</div>
+	// 			</aside>
+	// 		</div>
+	// 	)
+	// }
+
 }
 
 export default App;

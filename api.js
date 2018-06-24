@@ -2,6 +2,8 @@ const Picks = require('./db/picks');
 const Bracket = require('./db/bracket');
 
 // FILL IN CORRECT WINNERS AFTER GAMES ARE PLAYED
+
+// Data for testing
 // const groupWinners = {
 // 	'A': { 'winner': 'Russia', 'second': 'Uruguay' },
 // 	'B': { 'winner': 'Iran', 'second': 'Portugal' },
@@ -78,9 +80,13 @@ module.exports = function(router) {
 
 	router.get('/picks', (req, res) => {
 		const { name } = req.query;
-		Picks.find({ name }).exec(function(err, userPicks) {
+		let search = {};
+		if (name) {
+			search = { name };
+		}
+		Picks.find(search).exec(function(err, userPicks) {
 			if (err) throw err;
-			Bracket.find({ name }).exec(function(err, bracketPicks) {
+			Bracket.find(search).exec(function(err, bracketPicks) {
 				if (err) throw err;
 				res.json({ userPicks, groupWinners, bracketPicks, bracketWinners, goalsWinner });
 			})
