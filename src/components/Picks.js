@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Picks extends React.Component {
 	constructor() {
@@ -69,9 +70,9 @@ class Picks extends React.Component {
 				} else if (/3/.test(key)) {
 					points += 20;
 				} else if (/4/.test(key)) {
-					points += 30;
+					points += 40;
 				} else if (/champ/.test(key)) {
-					points += 50;
+					points += 80;
 				}
 			}
 		}
@@ -152,6 +153,7 @@ class Picks extends React.Component {
 			const picks = this.state.picks[0];
 			return (
 				<div className="picks">
+					<h5 id="home-link"><Link to="/">Home</Link></h5>
 				    <h3>{picks.name}'s Picks</h3>
 				    <h5>{this.calculatePoints()} Points</h5>
 				    <div className="flex-picks">
