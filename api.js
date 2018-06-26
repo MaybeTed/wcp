@@ -34,8 +34,8 @@ const Bracket = require('./db/bracket');
 const groupWinners = {
 	'A': { 'winner': 'Uruguay', 'second': 'Russia' },
 	'B': { 'winner': 'Spain', 'second': 'Portugal' },
-	'C': { 'winner': '---', 'second': '---' },
-	'D': { 'winner': '---', 'second': '---' },
+	'C': { 'winner': 'France', 'second': 'Denmark' },
+	'D': { 'winner': 'Croatia', 'second': 'Argentina' },
 	'E': { 'winner': '---', 'second': '---' },
 	'F': { 'winner': '---', 'second': '---' },
 	'G': { 'winner': '---', 'second': '---' },
