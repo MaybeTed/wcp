@@ -36,8 +36,8 @@ const groupWinners = {
 	'B': { 'winner': 'Spain', 'second': 'Portugal' },
 	'C': { 'winner': 'France', 'second': 'Denmark' },
 	'D': { 'winner': 'Croatia', 'second': 'Argentina' },
-	'E': { 'winner': '---', 'second': '---' },
-	'F': { 'winner': '---', 'second': '---' },
+	'E': { 'winner': 'Brazil', 'second': 'Switzerland' },
+	'F': { 'winner': 'Sweden', 'second': 'Mexico' },
 	'G': { 'winner': '---', 'second': '---' },
 	'H': { 'winner': '---', 'second': '---' }
 };
