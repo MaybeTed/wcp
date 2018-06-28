@@ -173,7 +173,7 @@ class Bracket extends React.Component {
 					</select>
 				</div>
 				<div className="point-values">
-					<p><span className="points1">10pts</span><span className="points2"></span>20pts<span className="points2">40pts</span><span className="points2">80pts</span></p>
+					<p><span className="points1">20pts</span><span className="points2"></span>40pts<span className="points2">70pts</span><span className="points2">100pts</span></p>
 				</div>
 				<div className="bracket">
 					<div className="round-one">
