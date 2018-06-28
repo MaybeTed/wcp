@@ -11,7 +11,17 @@ class Standings extends React.Component {
 			groupWinners: {},
 			bracketWinners: {},
 			goalsWinner: '',
-			sortedScores: []
+			sortedScores: [],
+			scoringTableData: [
+				{ label: 'Group Winner', points: 10},
+				{ label: 'Group Runner-up', points: 10},
+				{ label: 'Initial Champion Pick', points: 100},
+				{ label: 'Player with most goals', points: 40},
+				{ label: 'Round 1', points: 20},
+				{ label: 'Round 2', points: 40},
+				{ label: 'Round 3', points: 70},
+				{ label: 'Championship', points: 100}
+			]
 		}
 	}
 
@@ -49,7 +59,7 @@ class Standings extends React.Component {
 
 			if (bracketWinners && bracketWinners.champ) {
 				if (bracketWinners.champ === picks.champion) {
-					points += 200;
+					points += 100;
 				}
 			}
 			if (goalsWinner) {
@@ -66,13 +76,13 @@ class Standings extends React.Component {
 			for (var key in bracketWinners) {
 				if (bracketWinners[key] === userBracket[key]) {
 					if (/2/.test(key)) {
-						bracketPoints += 10;
-					} else if (/3/.test(key)) {
 						bracketPoints += 20;
-					} else if (/4/.test(key)) {
+					} else if (/3/.test(key)) {
 						bracketPoints += 40;
+					} else if (/4/.test(key)) {
+						bracketPoints += 70;
 					} else if (/champ/.test(key)) {
-						bracketPoints += 80;
+						bracketPoints += 100;
 					}
 				}
 			}
@@ -90,6 +100,16 @@ class Standings extends React.Component {
 		this.setState({ sortedScores });
 	}
 
+	renderScoringTable(row, i) {
+		return (
+			<tr key={i}>
+				<td>{row.label}</td>
+				<td>{row.points}</td>
+			</tr>
+		);
+
+	}
+
 	render() {
 		if (!this.state.sortedScores) {
 			return null;
@@ -103,7 +123,7 @@ class Standings extends React.Component {
 							return (
 								<div className="row" key={i}>
 									<div className="names">
-										{user.name}
+										{i + 1}. {user.name}
 									</div>
 									<div className="points">
 										{user.points}
@@ -112,6 +132,16 @@ class Standings extends React.Component {
 							)
 						})}
 					</div>
+				</section>
+				<section className="scoring-table-container">
+					<h2>Point Values</h2>
+					<table>
+						<tbody>
+							{this.state.scoringTableData.map((row, i) => {
+								return this.renderScoringTable(row, i);
+							})}
+						</tbody>
+					</table>
 				</section>
 			</div>
 		)
