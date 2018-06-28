@@ -26,6 +26,7 @@ class App extends React.Component {
 		axios.post('/api/submitBracket', picks)
 			.then((response) => {
 				this.setState({ madePicks: true });
+				window.scrollTo(0, 0);
 			})
 	}
 
