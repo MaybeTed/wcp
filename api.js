@@ -38,8 +38,8 @@ const groupWinners = {
 	'D': { 'winner': 'Croatia', 'second': 'Argentina' },
 	'E': { 'winner': 'Brazil', 'second': 'Switzerland' },
 	'F': { 'winner': 'Sweden', 'second': 'Mexico' },
-	'G': { 'winner': '---', 'second': '---' },
-	'H': { 'winner': '---', 'second': '---' }
+	'G': { 'winner': 'Belgium', 'second': 'England' },
+	'H': { 'winner': 'Colombia', 'second': 'Japan' }
 };
 const bracketWinners = {
 	round2A: '',
