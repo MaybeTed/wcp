@@ -49,7 +49,7 @@ class Picks extends React.Component {
 		points += this.calculateBracketPoints();
 		if (this.state.bracketWinners && this.state.picks.length) {
 			if (this.state.bracketWinners.champ === this.state.picks[0].champion) {
-				points += 200;
+				points += 100;
 			}
 		}
 		if (this.state.goalsWinner && this.state.picks.length) {
@@ -66,13 +66,13 @@ class Picks extends React.Component {
 		for (var key in bracketWinners) {
 			if (bracketWinners[key] === bracketPicks[key]) {
 				if (/2/.test(key)) {
-					points += 10;
-				} else if (/3/.test(key)) {
 					points += 20;
-				} else if (/4/.test(key)) {
+				} else if (/3/.test(key)) {
 					points += 40;
+				} else if (/4/.test(key)) {
+					points += 70;
 				} else if (/champ/.test(key)) {
-					points += 80;
+					points += 100;
 				}
 			}
 		}
