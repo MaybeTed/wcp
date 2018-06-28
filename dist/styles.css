@@ -301,9 +301,14 @@ td, th {
 /*********************
 	  STANDINGS     */
 
+.standings-page {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
 .standings {
-	margin: auto;
-	width: 150px;
+	width: 160px;
 }
 
 .standings-container h2 {
@@ -314,6 +319,12 @@ td, th {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+}
+
+.scoring-table-container td {
+	font-size: 1.3em;
+	margin: 0;
+	padding: 0 5px 0 0;
 }
 
 
