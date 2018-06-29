@@ -49,38 +49,6 @@ class App extends React.Component {
 			})
 	}
 
-	render() {
-		return (
-			<div>
-				<header>
-					<img src="/worldcup.png" />
-					<img src="/messi.png" />
-					<img src="/suarez.png" />
-					<img src="/neymar.png" />
-				</header>
-				<Switch>
-					<Route exact path="/" render={() => {
-						return !this.state.madePicks ?
-							<Bracket participants={this.state.participants} groupWinners={this.state.groupWinners} submitBracket={this.submitBracket} />
-							:
-							<div className="success-container">
-								<h1 className="success-msg">You have successfully submitted your picks.</h1>
-							</div>
-					}} />
-					<Route path="/picks/:username" render={(props) => (<Picks {...props} groupWinners={this.state.groupWinners}/>)} />
-				</Switch>
-				<aside>
-					<div className="participants-container">
-						<h4>Participants</h4>
-						{this.state.participants.map((user) => {
-							return <p key={user._id}><Link to={`/picks/${user.name}`}>{user.name}</Link></p>
-						})}
-					</div>
-				</aside>
-			</div>
-		)
-	}
-
 	// render() {
 	// 	return (
 	// 		<div>
@@ -91,7 +59,14 @@ class App extends React.Component {
 	// 				<img src="/neymar.png" />
 	// 			</header>
 	// 			<Switch>
-	// 				<Route exact path="/" render={() => (<Standings />)} />
+	// 				<Route exact path="/" render={() => {
+	// 					return !this.state.madePicks ?
+	// 						<Bracket participants={this.state.participants} groupWinners={this.state.groupWinners} submitBracket={this.submitBracket} />
+	// 						:
+	// 						<div className="success-container">
+	// 							<h1 className="success-msg">You have successfully submitted your picks.</h1>
+	// 						</div>
+	// 				}} />
 	// 				<Route path="/picks/:username" render={(props) => (<Picks {...props} groupWinners={this.state.groupWinners}/>)} />
 	// 			</Switch>
 	// 			<aside>
@@ -105,6 +80,31 @@ class App extends React.Component {
 	// 		</div>
 	// 	)
 	// }
+
+	render() {
+		return (
+			<div>
+				<header>
+					<img src="/worldcup.png" />
+					<img src="/messi.png" />
+					<img src="/suarez.png" />
+					<img src="/neymar.png" />
+				</header>
+				<Switch>
+					<Route exact path="/" render={() => (<Standings />)} />
+					<Route path="/picks/:username" render={(props) => (<Picks {...props} groupWinners={this.state.groupWinners}/>)} />
+				</Switch>
+				<aside>
+					<div className="participants-container">
+						<h4>Participants</h4>
+						{this.state.participants.map((user) => {
+							return <p key={user._id}><Link to={`/picks/${user.name}`}>{user.name}</Link></p>
+						})}
+					</div>
+				</aside>
+			</div>
+		)
+	}
 
 }
 
