@@ -43,7 +43,7 @@ const groupWinners = {
 };
 const bracketWinners = {
 	round2A: '',
-	round2B: '',
+	round2B: 'France',
 	round2C: '',
 	round2D: '',
 	round2E: '',
