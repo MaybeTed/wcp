@@ -42,7 +42,7 @@ const groupWinners = {
 	'H': { 'winner': 'Colombia', 'second': 'Japan' }
 };
 const bracketWinners = {
-	round2A: '',
+	round2A: 'Uruguay',
 	round2B: 'France',
 	round2C: '',
 	round2D: '',
