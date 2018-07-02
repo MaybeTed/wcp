@@ -44,8 +44,8 @@ const groupWinners = {
 const bracketWinners = {
 	round2A: 'Uruguay',
 	round2B: 'France',
-	round2C: '',
-	round2D: '',
+	round2C: 'Brazil',
+	round2D: 'Belgium',
 	round2E: 'Russia',
 	round2F: 'Croatia',
 	round2G: '',
