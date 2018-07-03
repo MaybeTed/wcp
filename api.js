@@ -48,7 +48,7 @@ const bracketWinners = {
 	round2D: 'Belgium',
 	round2E: 'Russia',
 	round2F: 'Croatia',
-	round2G: '',
+	round2G: 'Sweden',
 	round2H: '',
 	round3A: '',
 	round3B: '',
