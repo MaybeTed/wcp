@@ -54,8 +54,8 @@ const bracketWinners = {
 	round3B: 'Belgium',
 	round3C: 'Croatia',
 	round3D: 'England',
-	round4A: '',
-	round4B: '',
+	round4A: 'France',
+	round4B: 'Croatia',
 	champ: '',
 }
 const goalsWinner = '';
