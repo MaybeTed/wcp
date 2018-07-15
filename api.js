@@ -56,9 +56,9 @@ const bracketWinners = {
 	round3D: 'England',
 	round4A: 'France',
 	round4B: 'Croatia',
-	champ: '',
+	champ: 'France',
 }
-const goalsWinner = '';
+const goalsWinner = 'H Kane';
 
 module.exports = function(router) {
 	router.post('/submitPicks', (req, res) => {
