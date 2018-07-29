@@ -2,35 +2,6 @@ const Picks = require('./db/picks');
 const Bracket = require('./db/bracket');
 
 // FILL IN CORRECT WINNERS AFTER GAMES ARE PLAYED
-
-// Data for testing
-// const groupWinners = {
-// 	'A': { 'winner': 'Russia', 'second': 'Uruguay' },
-// 	'B': { 'winner': 'Iran', 'second': 'Portugal' },
-// 	'C': { 'winner': 'France', 'second': 'Denmark' },
-// 	'D': { 'winner': 'Croatia', 'second': 'Iceland' },
-// 	'E': { 'winner': 'Serbia', 'second': 'Brazil' },
-// 	'F': { 'winner': 'Sweden', 'second': 'Mexico' },
-// 	'G': { 'winner': 'Belgium', 'second': 'England' },
-// 	'H': { 'winner': 'Poland', 'second': 'Senegal' }
-// };
-// const bracketWinners = {
-// 	round2A: 'Russia',
-// 	round2B: 'France',
-// 	round2C: 'Mexico',
-// 	round2D: 'Belgium',
-// 	round2E: 'Uruguay',
-// 	round2F: 'Denmark',
-// 	round2G: 'Brazil',
-// 	round2H: 'England',
-// 	round3A: 'Russia',
-// 	round3B: 'Belgium',
-// 	round3C: 'Uruguay',
-// 	round3D: 'Brazil',
-// 	round4A: 'Russia',
-// 	round4B: 'Brazil',
-// 	champ: 'Brazil',
-// }
 const groupWinners = {
 	'A': { 'winner': 'Uruguay', 'second': 'Russia' },
 	'B': { 'winner': 'Spain', 'second': 'Portugal' },
